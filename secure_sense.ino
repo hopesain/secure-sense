@@ -124,7 +124,6 @@ float getDistance() {
 
   digitalWrite(trig_pin, LOW);
 
-
   long duration = pulseIn(echo_pin, HIGH);
 
   float distance = duration * 0.034 / 2;
