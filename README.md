@@ -22,6 +22,19 @@ Secure Sense uses a combination of sensors and actuators to detect threats, trig
 2. Servo Motor: Controls the door lock mechanism by opening access for authorized users and automatically locking the room during intrusion events.
 3. LCD Display (I2C): Provides real-time visual feedback on system status, such as active mode, warnings, intrusion alerts, and fire detection
 
+# System States and Logic
+Secure Sense operates using a state-based system that determines how the sensors and actuators behave at any given time. Sensors continuously update the current system state, while actuators (buzzer, servo motor, and LCD) respond by executing the appropriate actions for that state.
+
+### System States
+- INACTIVE: System is disabled; access is granted to authorized users.
+- ACTIVE: System is armed and monitoring for threats.
+- WARNING: A person is detected within a moderate proximity to the protected item.
+- DANGER: A person is detected very close to the protected item, indicating high risk.
+- INTRUSION: Unauthorized motion is detected; triggers a continuous alarm and locks the door of the room.
+- FLAME: Fire is detected; triggers an emergency alarm.
+
+Most of the detailed system behavior and logic is described in the How It Works section above.
+
 # Team
 Secure Sense was developed as a group project by Maxwell, Owen, Christian, and Hope, collectively operating under the name MOCH Electronics, an acronym derived from the first letters of each member’s name. The team was selected by the instructors of the Electronics and Arduino Programming Training to collaborate on the design and implementation of this project.
 
